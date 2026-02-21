@@ -277,8 +277,8 @@ ul, ol {
 .header__logo-img {
   height: 40px;
   width: auto;
-  filter: brightness(0) invert(1);
-  transition: filter 0.3s var(--ease);
+  filter: invert(1);
+  mix-blend-mode: screen;
 }
 
 .header__logo-text {
@@ -1310,7 +1310,8 @@ ul, ol {
 .footer__logo-img {
   height: 36px;
   width: auto;
-  filter: brightness(0) invert(1);
+  filter: invert(1);
+  mix-blend-mode: screen;
 }
 
 .footer__name {
