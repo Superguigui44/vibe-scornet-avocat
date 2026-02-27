@@ -4,19 +4,1463 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gaëlle Scornet — Avocat au Barreau de Nantes</title>
-  <meta name="description" content="Maître Gaëlle Scornet, avocate au Barreau de Nantes. Droit de la famille, droit commercial et droit civil. Plus de 30 ans d'expérience." />
+  <meta name="description" content="Maître Gaëlle Scornet, avocate au Barreau de Nantes depuis 1992. Droit de la famille, droit commercial et droit civil. Plus de 30 ans d'expérience au service de vos intérêts." />
+  <meta name="keywords" content="avocat nantes, droit famille nantes, droit commercial, droit civil, divorce nantes, Gaëlle Scornet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/src/style.css" />
-  <script type="module" src="/src/main.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,500;1,6..96,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       SCORNET AVOCAT — One-Page Redesign
+       Aesthetic: Refined Editorial / Luxury Legal
+       ============================================= */
+
+    :root {
+      --ink: #0b1a2e;
+      --ink-mid: #152640;
+      --ink-soft: #1e3355;
+      --gold: #b8924a;
+      --gold-bright: #d4a84e;
+      --gold-pale: #e8d5a8;
+      --gold-wash: rgba(184, 146, 74, 0.08);
+      --cream: #f6f1e7;
+      --cream-light: #faf7f0;
+      --parchment: #ede6d8;
+      --white: #fffef9;
+      --text: #1a1a1a;
+      --text-mid: #4a4a4a;
+      --text-soft: #7a7a7a;
+      --text-on-dark: rgba(255, 255, 255, 0.72);
+      --border: rgba(184, 146, 74, 0.2);
+
+      --ff-display: 'Bodoni Moda', 'Didot', 'Georgia', serif;
+      --ff-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+      --section-py: clamp(5rem, 10vw, 8rem);
+      --container: 1180px;
+      --pad: clamp(1.25rem, 4vw, 2.5rem);
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* --- Reset --- */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    button { font-family: inherit; }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    /* --- Grain texture overlay --- */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    /* --- Section Labels --- */
+    .label {
+      display: inline-block;
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 2.5rem;
+    }
+
+    .label::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 1.75rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .label--light { color: var(--gold-bright); }
+    .label--light::before { background: var(--gold-bright); }
+
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .section-title--light { color: var(--white); }
+
+    .accent { color: var(--gold); }
+
+    /* --- Gold decorative divider --- */
+    .gold-divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-pale));
+      margin: 1.5rem 0;
+    }
+
+    .gold-divider--center { margin: 1.5rem auto; }
+
+    /* --- Buttons --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      font-family: var(--ff-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: all 0.4s var(--ease);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn--gold {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+
+    .btn--gold:hover {
+      background: var(--gold-bright);
+      border-color: var(--gold-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(184, 146, 74, 0.25);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .btn--outline:hover {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn--outline-dark {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .btn--outline-dark:hover {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .btn--white {
+      background: var(--white);
+      color: var(--ink);
+      border-color: var(--white);
+    }
+
+    .btn--white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      transition: gap 0.3s var(--ease);
+    }
+
+    .link-arrow:hover { gap: 0.65rem; }
+
+    /* =============================================
+       HEADER
+       ============================================= */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.25rem 0;
+      transition: all 0.5s var(--ease);
+    }
+
+    .header--scrolled {
+      background: rgba(11, 26, 46, 0.95);
+      backdrop-filter: blur(16px) saturate(1.8);
+      -webkit-backdrop-filter: blur(16px) saturate(1.8);
+      padding: 0.6rem 0;
+      box-shadow: 0 1px 0 rgba(184, 146, 74, 0.15);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .header__logo-img {
+      height: 38px;
+      width: auto;
+    }
+
+    .header__logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header__name {
+      font-family: var(--ff-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+
+    .header__title {
+      font-size: 0.62rem;
+      font-weight: 500;
+      color: var(--gold-bright);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+    }
+
+    .header__link {
+      padding: 0.5rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 0.3s var(--ease);
+      letter-spacing: 0.02em;
+      position: relative;
+    }
+
+    .header__link:hover,
+    .header__link--active { color: var(--white); }
+
+    .header__link--active::after {
+      content: '';
+      position: absolute;
+      bottom: 0.2rem;
+      left: 1rem;
+      right: 1rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .header__link--cta {
+      background: var(--gold);
+      color: var(--white) !important;
+      margin-left: 0.75rem;
+      padding: 0.5rem 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      transition: background 0.3s var(--ease);
+    }
+
+    .header__link--cta:hover { background: var(--gold-bright); }
+    .header__link--cta::after { display: none; }
+
+    .header__burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      z-index: 1001;
+    }
+
+    .header__burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--white);
+      transition: all 0.35s var(--ease);
+      transform-origin: center;
+    }
+
+    .header__burger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(4.5px, 4.5px);
+    }
+    .header__burger.active span:nth-child(2) { opacity: 0; }
+    .header__burger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(4.5px, -4.5px);
+    }
+
+    /* =============================================
+       HERO
+       ============================================= */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      background: var(--ink);
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 80%, rgba(184, 146, 74, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 20%, rgba(184, 146, 74, 0.04) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 0%, rgba(30, 51, 85, 0.5) 0%, transparent 60%),
+        linear-gradient(175deg, #071425 0%, var(--ink) 35%, var(--ink-mid) 100%);
+    }
+
+    /* Geometric gold accent lines */
+    .hero__decor {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero__decor::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      right: 8%;
+      width: 200px;
+      height: 200px;
+      border: 1px solid rgba(184, 146, 74, 0.08);
+      transform: rotate(45deg);
+    }
+
+    .hero__decor::after {
+      content: '';
+      position: absolute;
+      bottom: 20%;
+      left: 5%;
+      width: 1px;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, rgba(184, 146, 74, 0.15), transparent);
+    }
+
+    .hero__content {
+      position: relative;
+      text-align: center;
+      padding: 10rem 0 5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero__label {
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: heroReveal 0.8s var(--ease-out) 0.3s forwards;
+    }
+
+    .hero__title {
+      font-family: var(--ff-display);
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--white);
+      line-height: 0.95;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroReveal 1s var(--ease-out) 0.5s forwards;
+    }
+
+    .hero__title span {
+      font-style: normal;
+      font-weight: 600;
+      display: block;
+      color: var(--gold-bright);
+      font-size: 0.35em;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-top: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .hero__tagline {
+      font-family: var(--ff-display);
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: heroReveal 0.8s var(--ease-out) 0.7s forwards;
+    }
+
+    .hero__domains {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: heroReveal 0.8s var(--ease-out) 0.85s forwards;
+    }
+
+    .hero__actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: heroReveal 0.8s var(--ease-out) 1s forwards;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0;
+      animation: heroReveal 0.8s var(--ease-out) 1.3s forwards;
+    }
+
+    .hero__scroll-text {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 500;
+      writing-mode: vertical-lr;
+    }
+
+    .hero__scroll-line {
+      width: 1px;
+      height: 45px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes heroReveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    /* =============================================
+       SECTION: ABOUT / LE CABINET
+       ============================================= */
+    .about {
+      padding: var(--section-py) 0;
+      background: var(--white);
+      position: relative;
+    }
+
+    .about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    /* --- Portrait band with text overlay --- */
+    .about__portrait {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .about__portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 25% 20%;
+      display: block;
+      filter: contrast(1.05) saturate(0.85);
+    }
+
+    .about__portrait-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 30%, rgba(250, 247, 240, 0.6) 50%, rgba(250, 247, 240, 0.92) 65%, var(--cream-light) 80%),
+        linear-gradient(180deg, rgba(11, 26, 46, 0.08) 0%, transparent 30%);
+    }
+
+    .about__portrait-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-pale), transparent);
+    }
+
+    .about__portrait-text {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 45%;
+      padding: 2.5rem clamp(2rem, 4vw, 4rem) 2.5rem 2rem;
+    }
+
+    .about__portrait-text .section-title {
+      margin-bottom: 1rem;
+    }
+
+    .about__portrait-text p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about__portrait-text p:last-of-type {
+      margin-bottom: 1.5rem;
+    }
+
+
+    /* --- Timeline --- */
+    .timeline-section {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--cream-light);
+    }
+
+    .timeline {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-top: 3rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: calc(3rem + 6px);
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-pale), var(--gold), transparent);
+    }
+
+    .timeline__item {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      padding: 0 1rem;
+    }
+
+    .timeline__dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--cream-light);
+      margin: 0 auto 1.5rem;
+      position: relative;
+      box-shadow: 0 0 0 1px var(--gold);
+    }
+
+    .timeline__year {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline__label {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline__desc {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       SECTION: COMPETENCES
+       ============================================= */
+    .competences {
+      padding: var(--section-py) 0;
+      background: var(--ink);
+      position: relative;
+    }
+
+    .competences__header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 4rem;
+    }
+
+    .competences__subtitle {
+      font-size: 0.95rem;
+      color: var(--text-on-dark);
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Competence blocks */
+    .comp-block {
+      margin-bottom: 4rem;
+    }
+
+    .comp-block:last-child { margin-bottom: 0; }
+
+    .comp-block__header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .comp-block__icon {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(184, 146, 74, 0.25);
+      color: var(--gold-bright);
+    }
+
+    .comp-block__title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    .comp-block__intro {
+      font-size: 0.95rem;
+      color: var(--text-on-dark);
+      line-height: 1.8;
+      max-width: 800px;
+      margin-bottom: 2rem;
+    }
+
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .comp-card {
+      padding: 1.75rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-left: 3px solid var(--gold);
+      transition: all 0.4s var(--ease);
+    }
+
+    .comp-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateX(4px);
+      border-left-color: var(--gold-bright);
+    }
+
+    .comp-card__title {
+      font-family: var(--ff-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .comp-card__text {
+      font-size: 0.87rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.65;
+    }
+
+    .comp-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.06);
+      margin: 4rem 0;
+    }
+
+    /* =============================================
+       SECTION: VALEURS
+       ============================================= */
+    .valeurs {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+
+    .valeurs__header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .valeurs__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .valeur {
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-right: 1px solid var(--parchment);
+      transition: all 0.4s var(--ease);
+      position: relative;
+    }
+
+    .valeur:last-child { border-right: none; }
+
+    .valeur::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: 60%;
+      height: 2px;
+      background: var(--gold);
+      transition: transform 0.4s var(--ease);
+    }
+
+    .valeur:hover::after { transform: translateX(-50%) scaleX(1); }
+
+    .valeur:hover { background: var(--cream-light); }
+
+    .valeur__number {
+      font-family: var(--ff-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--parchment);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .valeur__title {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .valeur__text {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* =============================================
+       SECTION: HONORAIRES
+       ============================================= */
+    .honoraires {
+      padding: var(--section-py) 0;
+      background: var(--cream-light);
+    }
+
+    .honoraires__grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: clamp(2.5rem, 5vw, 4rem);
+      align-items: start;
+    }
+
+    .honoraires__text p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .honoraires__modes {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .honoraires__mode {
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--gold);
+    }
+
+    .honoraires__mode h4 {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+
+    .honoraires__mode p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .honoraires__card {
+      background: var(--ink);
+      padding: 3rem;
+      text-align: center;
+      position: sticky;
+      top: 6rem;
+    }
+
+    .honoraires__card::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-pale));
+    }
+
+    .honoraires__card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .honoraires__card p {
+      font-size: 0.88rem;
+      color: var(--text-on-dark);
+      margin-bottom: 1.75rem;
+      line-height: 1.7;
+    }
+
+    .honoraires__card .btn { margin-bottom: 1.25rem; }
+
+    .honoraires__phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gold-bright);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .honoraires__phone svg { flex-shrink: 0; }
+
+    /* =============================================
+       SECTION: CONTACT
+       ============================================= */
+    .contact {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+
+    .contact__grid {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: clamp(2.5rem, 5vw, 4rem);
+      align-items: start;
+    }
+
+    .contact__info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .contact__info-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.25rem;
+      background: var(--cream-light);
+      transition: all 0.3s var(--ease);
+    }
+
+    .contact__info-card:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      transform: translateX(4px);
+    }
+
+    .contact__info-icon {
+      flex-shrink: 0;
+      color: var(--gold);
+      margin-top: 0.1rem;
+    }
+
+    .contact__info-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+    }
+
+    .contact__info-card p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    .contact__info-card a { color: var(--gold); }
+    .contact__info-card a:hover { color: var(--gold-bright); }
+
+    .contact__parking {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      padding: 1rem 1.25rem;
+      background: var(--parchment);
+      margin-top: 0.5rem;
+    }
+
+    .contact__parking svg { color: var(--gold); flex-shrink: 0; margin-top: 0.1rem; }
+    .contact__parking strong { font-size: 0.82rem; color: var(--ink); display: block; }
+    .contact__parking p { font-size: 0.82rem; color: var(--text-mid); margin: 0; }
+
+    /* Form */
+    .contact__form-wrap {
+      background: var(--cream-light);
+      padding: clamp(2rem, 4vw, 3rem);
+      position: relative;
+    }
+
+    .contact__form-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--gold), var(--gold-pale), transparent);
+    }
+
+    .contact__form-intro {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      margin-bottom: 2rem;
+    }
+
+    .form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form__field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .form__field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .form__field input,
+    .form__field select,
+    .form__field textarea {
+      font-family: var(--ff-body);
+      font-size: 0.9rem;
+      padding: 0.8rem 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: var(--white);
+      color: var(--text);
+      transition: border-color 0.3s, box-shadow 0.3s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form__field input:focus,
+    .form__field select:focus,
+    .form__field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px var(--gold-wash);
+    }
+
+    .form__field textarea { resize: vertical; min-height: 110px; }
+
+    .form__consent {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .form__consent input[type="checkbox"] {
+      margin-top: 0.2rem;
+      accent-color: var(--gold);
+    }
+
+    .form__consent label {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    .form__note {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .form__success,
+    .form__error {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 500;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .form__success {
+      background: rgba(46, 204, 113, 0.1);
+      color: #1a7a40;
+      border: 1px solid rgba(46, 204, 113, 0.2);
+    }
+
+    .form__error {
+      background: rgba(231, 76, 60, 0.1);
+      color: #c0392b;
+      border: 1px solid rgba(231, 76, 60, 0.2);
+    }
+
+    /* Map */
+    .map-section { line-height: 0; }
+    .map-section iframe { display: block; width: 100%; }
+
+    /* =============================================
+       CTA BAND
+       ============================================= */
+    .cta-band {
+      background: var(--ink);
+      padding: clamp(4rem, 8vw, 6rem) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(184, 146, 74, 0.08) 0%, transparent 60%);
+    }
+
+    .cta-band__inner {
+      position: relative;
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .cta-band__title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .cta-band__text {
+      font-size: 0.95rem;
+      color: var(--text-on-dark);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .cta-band__actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* =============================================
+       FOOTER
+       ============================================= */
+    .footer {
+      background: #071425;
+      padding: clamp(3rem, 6vw, 4.5rem) 0 0;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+      gap: 2rem;
+      padding-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .footer__logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer__logo-img { height: 34px; width: auto; }
+
+    .footer__name {
+      display: block;
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .footer__bar {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 500;
+      color: var(--gold-bright);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer__desc {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 1.7;
+    }
+
+    .footer__heading {
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer__links a {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+      transition: color 0.3s;
+    }
+
+    .footer__links a:hover { color: var(--gold-bright); }
+
+    .footer__contact p {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer__contact a { color: var(--gold-bright); }
+    .footer__contact a:hover { color: var(--gold); }
+
+    .footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer__bottom p {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .footer__bottom a {
+      color: rgba(255, 255, 255, 0.3);
+      transition: color 0.3s;
+    }
+
+    .footer__bottom a:hover { color: var(--gold-bright); }
+
+    /* =============================================
+       SCROLL REVEAL
+       ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Stagger children */
+    .stagger > *:nth-child(1) { transition-delay: 0s; }
+    .stagger > *:nth-child(2) { transition-delay: 0.08s; }
+    .stagger > *:nth-child(3) { transition-delay: 0.16s; }
+    .stagger > *:nth-child(4) { transition-delay: 0.24s; }
+    .stagger > *:nth-child(5) { transition-delay: 0.32s; }
+
+    /* =============================================
+       RESPONSIVE
+       ============================================= */
+    @media (max-width: 1024px) {
+      .valeurs__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .valeur {
+        border-bottom: 1px solid var(--parchment);
+      }
+
+      .valeur:nth-child(2) { border-right: none; }
+
+      .comp-grid { grid-template-columns: 1fr; }
+
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header__burger { display: flex; }
+
+      .header__nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        height: 100dvh;
+        background: var(--ink);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        transition: right 0.5s var(--ease-out);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .header__nav.open { right: 0; }
+
+      .header__link {
+        font-size: 1.05rem;
+        padding: 0.7rem 1.5rem;
+      }
+
+      .header__link--active::after { display: none; }
+
+      .header__link--cta {
+        margin-left: 0;
+        margin-top: 0.75rem;
+      }
+
+      .about__portrait { height: auto; }
+
+      .about__portrait img {
+        height: 280px;
+        object-position: 30% 15%;
+      }
+
+      .about__portrait-overlay {
+        background:
+          linear-gradient(0deg, var(--cream-light) 0%, transparent 30%),
+          linear-gradient(180deg, rgba(11, 26, 46, 0.08) 0%, transparent 30%);
+      }
+
+      .about__portrait-text {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: 100%;
+        padding: 1.5rem var(--pad) 0;
+        background: var(--cream-light);
+      }
+
+      .timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 2rem;
+        gap: 2rem;
+      }
+
+      .timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 6px;
+        right: auto;
+        width: 1px;
+        height: auto;
+      }
+
+      .timeline__item { text-align: left; }
+
+      .timeline__dot {
+        position: absolute;
+        left: -2rem;
+        top: 0.3rem;
+        margin: 0;
+        transform: translateX(-0px);
+      }
+
+      .valeurs__grid { grid-template-columns: 1fr; }
+
+      .valeur {
+        border-right: none;
+        text-align: left;
+        padding: 1.5rem;
+      }
+
+      .honoraires__grid { grid-template-columns: 1fr; }
+
+      .honoraires__card { position: static; }
+
+      .contact__grid { grid-template-columns: 1fr; }
+
+      .form__row { grid-template-columns: 1fr; }
+
+      .footer__grid { grid-template-columns: 1fr; }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .hero__actions { flex-direction: column; align-items: center; }
+
+      .hero__scroll { display: none; }
+
+      .hero__title {
+        font-size: clamp(2.8rem, 10vw, 4.5rem);
+      }
+
+      .cta-band__actions { flex-direction: column; align-items: center; }
+    }
+
+    @media (max-width: 480px) {
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- ==================== HEADER ==================== -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="/" class="header__logo">
+      <a href="#hero" class="header__logo">
         <img src="/logo-gs.png" alt="GS Avocat" class="header__logo-img" />
         <div class="header__logo-text">
           <span class="header__name">Gaëlle Scornet</span>
@@ -24,10 +1468,10 @@
         </div>
       </a>
       <nav class="header__nav" id="nav">
-        <a href="/" class="header__link header__link--active">Accueil</a>
-        <a href="/cabinet.html" class="header__link">Le Cabinet</a>
-        <a href="/competences.html" class="header__link">Compétences</a>
-        <a href="/contact.html" class="header__link header__link--cta">Contact</a>
+        <a href="#cabinet" class="header__link header__link--active">Le Cabinet</a>
+        <a href="#competences" class="header__link">Compétences</a>
+        <a href="#honoraires" class="header__link">Honoraires</a>
+        <a href="#contact" class="header__link header__link--cta">Contact</a>
       </nav>
       <button class="header__burger" id="burger" aria-label="Menu">
         <span></span>
@@ -37,194 +1481,231 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero__overlay"></div>
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__decor"></div>
     <div class="container hero__content">
-      <p class="hero__subtitle reveal">Cabinet d'avocat à Nantes</p>
-      <h1 class="hero__title reveal">
-        Gaëlle <span class="text-accent">Scornet</span>
+      <p class="hero__label">Cabinet d'avocat a Nantes</p>
+      <h1 class="hero__title">
+        Gaëlle Scornet
+        <span>Avocat au Barreau de Nantes</span>
       </h1>
-      <p class="hero__tagline reveal">Avocat au Barreau de Nantes depuis 1992</p>
-      <p class="hero__description reveal">
-        Droit de la famille · Droit commercial · Droit civil
-      </p>
-      <div class="hero__actions reveal">
-        <a href="/contact.html" class="btn btn--primary">Prendre rendez-vous</a>
-        <a href="/competences.html" class="btn btn--outline">Nos compétences</a>
+      <p class="hero__tagline">Plus de 30 ans d'engagement au service du droit</p>
+      <p class="hero__domains">Famille · Commercial · Civil</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--gold">Prendre rendez-vous</a>
+        <a href="#competences" class="btn btn--outline">Nos competences</a>
       </div>
     </div>
     <div class="hero__scroll">
-      <span>Découvrir</span>
+      <span class="hero__scroll-text">Decouvrir</span>
       <div class="hero__scroll-line"></div>
     </div>
   </section>
 
-  <!-- Introduction -->
-  <section class="section section--light" id="intro">
+  <!-- ==================== LE CABINET ==================== -->
+  <section class="about" id="cabinet">
+    <!-- Photo avec texte superpose a droite -->
+    <div class="about__portrait reveal">
+      <img src="/gaelle-scornet.jpg" alt="Maitre Gaëlle Scornet, Avocat au Barreau de Nantes" />
+      <div class="about__portrait-overlay"></div>
+      <div class="about__portrait-bar"></div>
+      <div class="about__portrait-text">
+        <span class="label">Le Cabinet</span>
+        <h2 class="section-title">Un accompagnement<br>juridique <em class="accent">de confiance</em></h2>
+        <div class="gold-divider"></div>
+        <p>Forte de plus de <strong>30 ans d'expérience</strong> au Barreau de Nantes, Maître Gaëlle Scornet met son expertise au service de ses clients.</p>
+        <p>Après plus de 20 ans au sein du cabinet <strong>Avocats Associés SJOA</strong>, elle a fondé sa propre structure en 2018, <strong>place du Bouffay</strong>, pour un accompagnement personnalisé et humain.</p>
+        <a href="#competences" class="link-arrow">Voir nos compétences &rarr;</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Parcours unifie -->
+  <section class="timeline-section">
     <div class="container">
-      <div class="intro">
-        <div class="intro__text reveal">
-          <span class="section__label">Bienvenue</span>
-          <h2 class="section__title">Un accompagnement <br><span class="text-accent">juridique de confiance</span></h2>
-          <p class="intro__paragraph">
-            Forte de plus de <strong>30 ans d'expérience</strong> au Barreau de Nantes, Maître Gaëlle Scornet met son expertise et son engagement au service de ses clients. Après plus de 20 ans en tant qu'associée au sein du cabinet Avocats Associés SJOA, elle a fondé sa propre structure en 2018 pour offrir un accompagnement personnalisé et humain.
-          </p>
-          <p class="intro__paragraph">
-            Que vous fassiez face à un litige familial, un différend commercial ou une question de droit civil, Maître Scornet vous apporte des conseils avisés et une défense rigoureuse de vos intérêts.
-          </p>
-          <a href="/cabinet.html" class="link-arrow">Découvrir le cabinet →</a>
+      <div class="timeline stagger">
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__year">1992</div>
+          <div class="timeline__label">Prestation de serment</div>
+          <div class="timeline__desc">Barreau de Nantes &middot; CAPA Rennes &middot; Maitrise Droit des Affaires</div>
         </div>
-        <div class="intro__visual reveal">
-          <div class="intro__photo">
-            <img src="/gaelle-scornet.jpg" alt="Maître Gaëlle Scornet, Avocat au Barreau de Nantes" />
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__year">20+ ans</div>
+          <div class="timeline__label">Cabinet SJOA</div>
+          <div class="timeline__desc">Associée &middot; Famille, commercial & civil</div>
+        </div>
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__year">2018</div>
+          <div class="timeline__label">Cabinet indépendant</div>
+          <div class="timeline__desc">6 place du Bouffay, Nantes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMPETENCES ==================== -->
+  <section class="competences" id="competences">
+    <div class="container">
+      <div class="competences__header reveal">
+        <span class="label label--light">Expertise</span>
+        <h2 class="section-title section-title--light">Domaines de <em class="accent">compétences</em></h2>
+        <p class="competences__subtitle">Une expertise reconnue dans trois branches essentielles du droit</p>
+      </div>
+
+      <!-- Droit de la famille -->
+      <div class="comp-block reveal">
+        <div class="comp-block__header">
+          <div class="comp-block__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
           </div>
-          <div class="intro__stats">
-            <div class="intro__stat">
-              <span class="intro__stat-number">30+</span>
-              <span class="intro__stat-label">Années d'expérience</span>
-            </div>
-            <div class="intro__stat">
-              <span class="intro__stat-number">1992</span>
-              <span class="intro__stat-label">Assermentée au Barreau</span>
-            </div>
-            <div class="intro__stat">
-              <span class="intro__stat-number">3</span>
-              <span class="intro__stat-label">Domaines d'expertise</span>
-            </div>
+          <h3 class="comp-block__title">Droit de la <em class="accent">famille</em></h3>
+        </div>
+        <p class="comp-block__intro">Le droit de la famille touche à l'intime et nécessite un accompagnement rigoureux sur le plan juridique et humain dans l'approche.</p>
+        <div class="comp-grid stagger">
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Divorce & Séparation</h4>
+            <p class="comp-card__text">Consentement mutuel, divorce pour faute, altération définitive du lien conjugal. Gestion des séparations et conséquences patrimoniales.</p>
+          </div>
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Relations parents / enfants</h4>
+            <p class="comp-card__text">Résidence des enfants, droit de visite, pension alimentaire, autorité parentale. Droits des grands-parents et assistance éducative.</p>
+          </div>
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Filiation & Adoption</h4>
+            <p class="comp-card__text">Établissement ou contestation de filiation, adoption simple et plénière. Accompagnement avec rigueur et bienveillance.</p>
+          </div>
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Délits familiaux</h4>
+            <p class="comp-card__text">Abandon de famille, non-représentation d'enfant, violences conjugales. Protection des victimes et procédures pénales.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-divider"></div>
+
+      <!-- Droit commercial -->
+      <div class="comp-block reveal">
+        <div class="comp-block__header">
+          <div class="comp-block__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="comp-block__title">Droit <em class="accent">commercial</em></h3>
+        </div>
+        <p class="comp-block__intro">Les litiges commerciaux requièrent une connaissance approfondie du monde des affaires et une capacité à défendre efficacement les intérêts des entreprises.</p>
+        <div class="comp-grid stagger">
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Recouvrement de créances</h4>
+            <p class="comp-card__text">Mise en demeure, injonction de payer, procédures d'exécution. Stratégies efficaces pour vos créances impayées.</p>
+          </div>
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Litiges entre associés</h4>
+            <p class="comp-card__text">Mésentente, abus de majorité ou minorité, révocation abusive de dirigeant. Résolution par voie amiable ou judiciaire.</p>
+          </div>
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Responsabilité du dirigeant</h4>
+            <p class="comp-card__text">Responsabilité civile ou pénale, comblement de passif, fautes de gestion. Défense et conseil du chef d'entreprise.</p>
+          </div>
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Baux commerciaux</h4>
+            <p class="comp-card__text">Renouvellement, révision du loyer, déplafonnement, résiliation et indemnité d'éviction.</p>
+          </div>
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Responsabilité contractuelle</h4>
+            <p class="comp-card__text">Inexécution des contrats commerciaux, rupture abusive de relations commerciales, concurrence déloyale.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-divider"></div>
+
+      <!-- Droit civil -->
+      <div class="comp-block reveal">
+        <div class="comp-block__header">
+          <div class="comp-block__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="comp-block__title">Droit <em class="accent">civil</em></h3>
+        </div>
+        <p class="comp-block__intro">Le droit civil régit les relations entre les personnes dans leur vie quotidienne. Résolution de vos litiges avec pragmatisme et efficacité.</p>
+        <div class="comp-grid stagger">
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Baux d'habitation</h4>
+            <p class="comp-card__text">Loyers impayés, troubles de jouissance, dépôt de garantie, congé, expulsion. Défense locataires et propriétaires.</p>
+          </div>
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Responsabilité contractuelle</h4>
+            <p class="comp-card__text">Inexécution d'un contrat, vices cachés, malfaçons, litiges de consommation. Réparation du préjudice subi.</p>
+          </div>
+          <div class="comp-card reveal">
+            <h4 class="comp-card__title">Responsabilité délictuelle</h4>
+            <p class="comp-card__text">Dommages corporels, troubles de voisinage, accidents de la vie courante. Indemnisation des victimes.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Compétences Overview -->
-  <section class="section section--dark" id="competences">
+  <!-- ==================== VALEURS ==================== -->
+  <section class="valeurs" id="valeurs">
     <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label section__label--light">Expertise</span>
-        <h2 class="section__title section__title--light">Domaines de <span class="text-accent">compétences</span></h2>
-        <p class="section__subtitle">Une expertise reconnue dans trois branches essentielles du droit</p>
+      <div class="valeurs__header reveal">
+        <span class="label">Notre approche</span>
+        <h2 class="section-title">Des valeurs au cœur<br>de <em class="accent">notre pratique</em></h2>
       </div>
-
-      <div class="competences-grid">
-        <!-- Droit de la famille -->
-        <div class="competence-card reveal">
-          <div class="competence-card__icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <h3 class="competence-card__title">Droit de la famille</h3>
-          <p class="competence-card__description">
-            Divorce, séparation, garde d'enfants, pension alimentaire, droits des grands-parents, adoption et filiation.
-          </p>
-          <ul class="competence-card__list">
-            <li>Divorce & séparation</li>
-            <li>Relations parents/enfants</li>
-            <li>Adoption & filiation</li>
-            <li>Violences conjugales</li>
-          </ul>
-          <a href="/competences.html" class="competence-card__link">En savoir plus →</a>
+      <div class="valeurs__grid stagger">
+        <div class="valeur reveal">
+          <div class="valeur__number">01</div>
+          <h3 class="valeur__title">Écoute & Disponibilité</h3>
+          <p class="valeur__text">Chaque situation est unique. Maître Scornet prend le temps de comprendre votre situation dans sa globalité.</p>
         </div>
-
-        <!-- Droit commercial -->
-        <div class="competence-card reveal">
-          <div class="competence-card__icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-              <line x1="8" y1="21" x2="16" y2="21"/>
-              <line x1="12" y1="17" x2="12" y2="21"/>
-            </svg>
-          </div>
-          <h3 class="competence-card__title">Droit commercial</h3>
-          <p class="competence-card__description">
-            Recouvrement de créances, litiges entre associés, responsabilité du dirigeant et baux commerciaux.
-          </p>
-          <ul class="competence-card__list">
-            <li>Recouvrement de créances</li>
-            <li>Litiges entre associés</li>
-            <li>Responsabilité du dirigeant</li>
-            <li>Baux commerciaux</li>
-          </ul>
-          <a href="/competences.html" class="competence-card__link">En savoir plus →</a>
+        <div class="valeur reveal">
+          <div class="valeur__number">02</div>
+          <h3 class="valeur__title">Expertise & Rigueur</h3>
+          <p class="valeur__text">Plus de 30 ans de pratique garantissent une maîtrise approfondie du droit et des procédures judiciaires.</p>
         </div>
-
-        <!-- Droit civil -->
-        <div class="competence-card reveal">
-          <div class="competence-card__icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
-            </svg>
-          </div>
-          <h3 class="competence-card__title">Droit civil</h3>
-          <p class="competence-card__description">
-            Baux d'habitation, responsabilité civile contractuelle et délictuelle, litiges entre particuliers.
-          </p>
-          <ul class="competence-card__list">
-            <li>Baux d'habitation</li>
-            <li>Responsabilité contractuelle</li>
-            <li>Responsabilité délictuelle</li>
-            <li>Recouvrement amiable</li>
-          </ul>
-          <a href="/competences.html" class="competence-card__link">En savoir plus →</a>
+        <div class="valeur reveal">
+          <div class="valeur__number">03</div>
+          <h3 class="valeur__title">Transparence</h3>
+          <p class="valeur__text">Convention d'honoraires établie dès le premier rendez-vous. Vous connaissez à l'avance les conditions.</p>
+        </div>
+        <div class="valeur reveal">
+          <div class="valeur__number">04</div>
+          <h3 class="valeur__title">Défense de vos intérêts</h3>
+          <p class="valeur__text">Défense de vos droits avec détermination tout en privilégiant les solutions amiables quand possible.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Valeurs / Approche -->
-  <section class="section section--light">
+  <!-- ==================== HONORAIRES ==================== -->
+  <section class="honoraires" id="honoraires">
     <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">Notre approche</span>
-        <h2 class="section__title">Des valeurs au cœur <br>de <span class="text-accent">notre pratique</span></h2>
-      </div>
-
-      <div class="values-grid">
-        <div class="value-item reveal">
-          <div class="value-item__number">01</div>
-          <h3 class="value-item__title">Écoute & Disponibilité</h3>
-          <p class="value-item__text">Chaque situation est unique. Maître Scornet prend le temps de comprendre votre situation dans sa globalité pour vous apporter la réponse la plus adaptée.</p>
-        </div>
-        <div class="value-item reveal">
-          <div class="value-item__number">02</div>
-          <h3 class="value-item__title">Expertise & Rigueur</h3>
-          <p class="value-item__text">Plus de 30 ans de pratique juridique garantissent une maîtrise approfondie du droit et une connaissance fine des procédures judiciaires.</p>
-        </div>
-        <div class="value-item reveal">
-          <div class="value-item__number">03</div>
-          <h3 class="value-item__title">Transparence</h3>
-          <p class="value-item__text">Une convention d'honoraires est établie dès le premier rendez-vous. Vous connaissez à l'avance les conditions de notre intervention.</p>
-        </div>
-        <div class="value-item reveal">
-          <div class="value-item__number">04</div>
-          <h3 class="value-item__title">Défense de vos intérêts</h3>
-          <p class="value-item__text">Votre avocate s'engage à défendre vos droits avec détermination tout en privilégiant, quand cela est possible, les solutions amiables.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Honoraires -->
-  <section class="section section--beige" id="honoraires">
-    <div class="container">
-      <div class="honoraires">
-        <div class="honoraires__text reveal">
-          <span class="section__label">Honoraires</span>
-          <h2 class="section__title">Des honoraires <span class="text-accent">transparents</span></h2>
-          <p>Une convention d'honoraires est systématiquement envisagée lors du premier rendez-vous afin que vous connaissiez précisément les conditions financières de l'intervention.</p>
+      <div class="honoraires__grid">
+        <div class="reveal-left">
+          <span class="label">Honoraires</span>
+          <h2 class="section-title">Des honoraires <em class="accent">transparents</em></h2>
+          <div class="gold-divider"></div>
+          <div class="honoraires__text">
+            <p>Une convention d'honoraires est systématiquement envisagée lors du premier rendez-vous afin que vous connaissiez précisément les conditions financières de l'intervention.</p>
+          </div>
           <div class="honoraires__modes">
             <div class="honoraires__mode">
               <h4>Honoraires forfaitaires</h4>
-              <p>Un montant fixe déterminé à l'avance pour les procédures dont le périmètre est clairement défini.</p>
+              <p>Un montant fixe déterminé à l'avance pour les procédures au périmètre clairement défini.</p>
             </div>
             <div class="honoraires__mode">
               <h4>Honoraires au temps passé</h4>
@@ -236,36 +1717,159 @@
             </div>
           </div>
         </div>
-        <div class="honoraires__cta reveal">
-          <div class="honoraires__cta-card">
+        <div class="reveal-right">
+          <div class="honoraires__card">
             <h3>Premier rendez-vous</h3>
             <p>Prenez rendez-vous pour une première consultation. Nous étudierons ensemble votre situation et définirons la meilleure stratégie.</p>
-            <a href="/contact.html" class="btn btn--primary">Nous contacter</a>
-            <p class="honoraires__phone">
+            <a href="#contact" class="btn btn--gold" style="width: 100%;">Nous contacter</a>
+            <div class="honoraires__phone">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              02 51 78 99 39
-            </p>
+              <a href="tel:0251789939">02 51 78 99 39</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
+  <!-- ==================== CTA ==================== -->
+  <section class="cta-band">
     <div class="container">
-      <div class="cta-content reveal">
-        <h2 class="cta-content__title">Besoin d'un conseil juridique ?</h2>
-        <p class="cta-content__text">Maître Gaëlle Scornet est à votre écoute pour étudier votre situation et vous accompagner dans vos démarches.</p>
-        <div class="cta-content__actions">
-          <a href="/contact.html" class="btn btn--white">Prendre rendez-vous</a>
-          <a href="tel:0251789939" class="btn btn--outline-white">02 51 78 99 39</a>
+      <div class="cta-band__inner reveal">
+        <h2 class="cta-band__title">Besoin d'un conseil juridique ?</h2>
+        <p class="cta-band__text">Maître Gaëlle Scornet est à votre écoute pour étudier votre situation et vous accompagner dans vos démarches.</p>
+        <div class="cta-band__actions">
+          <a href="#contact" class="btn btn--white">Prendre rendez-vous</a>
+          <a href="tel:0251789939" class="btn btn--outline">02 51 78 99 39</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <!-- Info -->
+        <div class="reveal-left">
+          <span class="label">Contact</span>
+          <h2 class="section-title">Nos <em class="accent">coordonnées</em></h2>
+          <div class="contact__info-cards">
+            <div class="contact__info-card">
+              <div class="contact__info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h3>Adresse</h3>
+                <p>6 place du Bouffay<br>44000 Nantes</p>
+              </div>
+            </div>
+            <div class="contact__info-card">
+              <div class="contact__info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <h3>Téléphone</h3>
+                <p><a href="tel:0251789939">02 51 78 99 39</a></p>
+              </div>
+            </div>
+            <div class="contact__info-card">
+              <div class="contact__info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:contact@scornet-avocat.fr">contact@scornet-avocat.fr</a></p>
+              </div>
+            </div>
+            <div class="contact__info-card">
+              <div class="contact__info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h3>Horaires</h3>
+                <p>Lundi – Vendredi<br>9h00 – 12h30 / 14h00 – 18h30</p>
+                <p style="font-size: 0.78rem; color: var(--text-soft);">Sur rendez-vous uniquement</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact__parking">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
+            <div>
+              <strong>Parkings à proximité</strong>
+              <p>Decré-Bouffay · Feydeau</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact__form-wrap reveal-right">
+          <h2 class="section-title" style="font-size: clamp(1.5rem, 3vw, 2rem);">Envoyez-nous <em class="accent">un message</em></h2>
+          <p class="contact__form-intro">Décrivez brièvement votre situation. Maître Scornet vous recontactera dans les meilleurs délais.</p>
+
+          <form id="contactForm" action="/send-mail.php" method="POST">
+            <div class="form__row">
+              <div class="form__field">
+                <label for="lastname">Nom *</label>
+                <input type="text" id="lastname" name="lastname" required placeholder="Votre nom" />
+              </div>
+              <div class="form__field">
+                <label for="firstname">Prénom *</label>
+                <input type="text" id="firstname" name="firstname" required placeholder="Votre prénom" />
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__field">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="votre@email.com" />
+              </div>
+              <div class="form__field">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00" />
+              </div>
+            </div>
+            <div class="form__field">
+              <label for="subject">Objet *</label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Choisissez un domaine</option>
+                <option value="Droit de la famille">Droit de la famille</option>
+                <option value="Droit commercial">Droit commercial</option>
+                <option value="Droit civil">Droit civil</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+            <div class="form__field">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Décrivez brièvement votre situation..."></textarea>
+            </div>
+            <div class="form__consent">
+              <input type="checkbox" id="consent" name="consent" required />
+              <label for="consent">J'accepte que mes données soient traitées dans le cadre de ma demande de contact. *</label>
+            </div>
+            <button type="submit" class="btn btn--gold" style="width: 100%;">Envoyer le message</button>
+            <p class="form__note">* Champs obligatoires. Vos données sont traitées de manière confidentielle.</p>
+            <div class="form__success" id="formSuccess">Votre message a bien été envoyé. Nous vous recontacterons dans les meilleurs délais.</div>
+            <div class="form__error" id="formError">Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.5!2d-1.5534!3d47.2133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805eeb47c5e0001%3A0x0!2s6+Place+du+Bouffay%2C+44000+Nantes!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
+      width="100%"
+      height="400"
+      style="border:0; display:block;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
@@ -277,26 +1881,22 @@
               <span class="footer__bar">Avocat au Barreau de Nantes</span>
             </div>
           </div>
-          <p class="footer__description">
-            Cabinet d'avocat intervenant en droit de la famille, droit commercial et droit civil à Nantes et sa région.
-          </p>
+          <p class="footer__desc">Cabinet d'avocat intervenant en droit de la famille, droit commercial et droit civil à Nantes et sa région.</p>
         </div>
-
         <div class="footer__links">
           <h4 class="footer__heading">Navigation</h4>
-          <a href="/">Accueil</a>
-          <a href="/cabinet.html">Le Cabinet</a>
-          <a href="/competences.html">Compétences</a>
-          <a href="/contact.html">Contact</a>
+          <a href="#hero">Accueil</a>
+          <a href="#cabinet">Le Cabinet</a>
+          <a href="#competences">Compétences</a>
+          <a href="#honoraires">Honoraires</a>
+          <a href="#contact">Contact</a>
         </div>
-
         <div class="footer__links">
           <h4 class="footer__heading">Compétences</h4>
-          <a href="/competences.html">Droit de la famille</a>
-          <a href="/competences.html">Droit commercial</a>
-          <a href="/competences.html">Droit civil</a>
+          <a href="#competences">Droit de la famille</a>
+          <a href="#competences">Droit commercial</a>
+          <a href="#competences">Droit civil</a>
         </div>
-
         <div class="footer__contact">
           <h4 class="footer__heading">Contact</h4>
           <p>6 place du Bouffay<br>44000 Nantes</p>
@@ -304,13 +1904,165 @@
           <p><a href="tel:0251789939">02 51 78 99 39</a></p>
         </div>
       </div>
-
       <div class="footer__bottom">
         <p>&copy; 2024 Gaëlle Scornet — Avocat au Barreau de Nantes. Tous droits réservés.</p>
         <p><a href="#">Mentions légales</a></p>
       </div>
     </div>
   </footer>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initHeader();
+      initMobileMenu();
+      initScrollReveal();
+      initActiveNav();
+      initContactForm();
+    });
+
+    /* --- Header scroll --- */
+    function initHeader() {
+      const header = document.getElementById('header');
+      if (!header) return;
+      const update = () => {
+        header.classList.toggle('header--scrolled', window.scrollY > 60);
+      };
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    }
+
+    /* --- Mobile menu --- */
+    function initMobileMenu() {
+      const burger = document.getElementById('burger');
+      const nav = document.getElementById('nav');
+      if (!burger || !nav) return;
+
+      const close = () => {
+        burger.classList.remove('active');
+        nav.classList.remove('open');
+        document.body.style.overflow = '';
+      };
+
+      burger.addEventListener('click', () => {
+        const isOpen = nav.classList.contains('open');
+        if (isOpen) { close(); }
+        else {
+          burger.classList.add('active');
+          nav.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+
+      nav.querySelectorAll('.header__link').forEach(link => {
+        link.addEventListener('click', close);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+      });
+    }
+
+    /* --- Scroll reveal (IntersectionObserver) --- */
+    function initScrollReveal() {
+      const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+      if (!els.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      els.forEach(el => observer.observe(el));
+    }
+
+    /* --- Active nav link on scroll --- */
+    function initActiveNav() {
+      const sections = document.querySelectorAll('section[id]');
+      const links = document.querySelectorAll('.header__link:not(.header__link--cta)');
+
+      const update = () => {
+        const scrollY = window.scrollY + 150;
+        let currentId = '';
+
+        sections.forEach(section => {
+          if (section.offsetTop <= scrollY) {
+            currentId = section.id;
+          }
+        });
+
+        links.forEach(link => {
+          link.classList.remove('header__link--active');
+          if (link.getAttribute('href') === '#' + currentId) {
+            link.classList.add('header__link--active');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', update, { passive: true });
+    }
+
+    /* --- Contact form --- */
+    function initContactForm() {
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+
+      const success = document.getElementById('formSuccess');
+      const error = document.getElementById('formError');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        success.style.display = 'none';
+        error.style.display = 'none';
+
+        const required = form.querySelectorAll('[required]');
+        let valid = true;
+
+        required.forEach(field => {
+          if (field.type === 'checkbox' && !field.checked) {
+            valid = false;
+          } else if (field.type !== 'checkbox' && !field.value.trim()) {
+            field.style.borderColor = '#c0392b';
+            valid = false;
+          } else {
+            field.style.borderColor = '';
+          }
+        });
+
+        if (!valid) return;
+
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = 'Envoi en cours...';
+        btn.disabled = true;
+
+        fetch(form.action, { method: 'POST', body: new FormData(form) })
+          .then(res => {
+            if (res.ok) {
+              success.style.display = 'block';
+              form.reset();
+            } else {
+              throw new Error();
+            }
+          })
+          .catch(() => {
+            error.style.display = 'block';
+          })
+          .finally(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+          });
+      });
+
+      form.querySelectorAll('[required]').forEach(field => {
+        field.addEventListener('input', () => { field.style.borderColor = ''; });
+      });
+    }
+  </script>
 
 </body>
 </html>
